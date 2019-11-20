@@ -54,7 +54,7 @@ DisabledCollapsedSubprocessPopupProvider.prototype.getPopupMenuEntries = functio
 
       entries['replace-with-subprocess'] = {
         className: 'bpmn-icon-subprocess-collapsed',
-        label: translate('SubProcess'),
+        label: translate('Sub Process'),
         action: function() {
           bpmnReplace.replaceElement(element, {
             type: 'bpmn:SubProcess',
