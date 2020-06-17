@@ -4,6 +4,7 @@
   "description": "bpmn-js extension which disables modeling collapsed subprocess via replace menu",
   "main": "index.js",
   "scripts": {
+    "all": "npm run lint && npm run test",
     "lint": "eslint .",
     "dev": "npm test -- --auto-watch --no-single-run",
     "test": "karma start karma.config.js"
