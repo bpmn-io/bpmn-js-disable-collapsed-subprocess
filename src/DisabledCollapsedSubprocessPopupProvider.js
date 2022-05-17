@@ -48,24 +48,6 @@ DisabledCollapsedSubprocessPopupProvider.prototype.getPopupMenuEntries = functio
 
   return function(entries) {
 
-    if (isTask(element)) {
-      delete entries[REPLACE_WITH_EXPANDED];
-      delete entries[REPLACE_WITH_COLLAPSED];
-
-      entries['replace-with-subprocess'] = {
-        className: 'bpmn-icon-subprocess-collapsed',
-        label: translate('Sub Process'),
-        action: function() {
-          bpmnReplace.replaceElement(element, {
-            type: 'bpmn:SubProcess',
-            isExpanded: false
-          });
-        }
-      };
-
-      return entries;
-    }
-
     if (isSubProcess(element) && isExpanded(element)) {
       delete entries[REPLACE_WITH_COLLAPSED];
 
@@ -89,9 +71,6 @@ DisabledCollapsedSubprocessPopupProvider.prototype.getPopupMenuEntries = functio
 
 
 // helper /////
-function isTask(element) {
-  return is(element, 'bpmn:Task');
-}
 
 function isSubProcess(element) {
   return is(element, 'bpmn:SubProcess') &&

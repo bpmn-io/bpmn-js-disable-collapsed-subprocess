@@ -16,7 +16,6 @@ import diagramXML from './diagram.bpmn';
 
 var REPLACE_WITH_COLLAPSED = 'replace-with-collapsed-subprocess',
     REPLACE_WITH_EXPANDED = 'replace-with-expanded-subprocess',
-    REPLACE_WITH_SUBPROCESS = 'replace-with-subprocess',
     EXPAND_SUBPROCESS = 'expand-subprocess',
     REPLACE_WITH_TASK = 'replace-with-task';
 
@@ -52,9 +51,20 @@ describe('<DisabledCollapsedSubprocessPopupProvider>', function() {
     openPopup(task);
 
     // then
-    expect(queryEntry(REPLACE_WITH_SUBPROCESS)).to.exist;
-    expect(queryEntry(REPLACE_WITH_COLLAPSED)).to.not.exist;
-    expect(queryEntry(REPLACE_WITH_EXPANDED)).to.not.exist;
+    expect(queryEntry(REPLACE_WITH_COLLAPSED)).to.exist;
+    expect(queryEntry(EXPAND_SUBPROCESS)).to.not.exist;
+  }));
+
+
+  it('should allow to transform task into expanded subprocess', inject(function(elementRegistry) {
+
+    // given
+    var task = elementRegistry.get('Task');
+
+    openPopup(task);
+
+    // then
+    expect(queryEntry(REPLACE_WITH_COLLAPSED)).to.exist;
     expect(queryEntry(EXPAND_SUBPROCESS)).to.not.exist;
   }));
 
