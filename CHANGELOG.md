@@ -6,6 +6,10 @@ All notable changes to the [bpmn-js-disable-collapsed-subprocess](https://github
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.1.6
+
+* `DEPS`: support `bpmn-js@10`
+
 ## 0.1.5
 
 * `DEPS`: bump to `bpmn-js@9.2`
