@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/bpmn-io/bpmn-js-disable-collapsed-subprocess#readme",
   "devDependencies": {
-    "bpmn-js": "^10.1.0",
+    "bpmn-js": "^10.2.0",
     "chai": "^4.3.6",
     "eslint": "^6.6.0",
     "eslint-plugin-bpmn-io": "^0.10.0",
@@ -43,7 +43,7 @@
     "webpack": "^5.74.0"
   },
   "dependencies": {
-    "min-dash": "^3.5.2"
+    "min-dash": "^4.0.0"
   },
   "peerDependencies": {
     "bpmn-js": ">= 6"
