@@ -1,6 +1,6 @@
 {
   "name": "bpmn-js-disable-collapsed-subprocess",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "bpmn-js extension which disables modeling collapsed subprocess via replace menu",
   "main": "index.js",
   "files": [
