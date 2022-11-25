@@ -118,11 +118,12 @@ describe('<DisabledCollapsedSubprocessPopupProvider>', function() {
     expect(queryEntry(REPLACE_WITH_COLLAPSED)).to.not.exist;
     expect(queryEntry(EXPAND_SUBPROCESS)).to.not.exist;
   }));
+
 });
 
 // helper ////
 function queryEntry(id) {
-  var container = getBpmnJS().get('canvas').getContainer();
+  var container = getBpmnJS().get('popupMenu')._current.container;
 
-  return container.querySelector('.djs-popup [data-id="' + id + '"]');
+  return container.querySelector('.djs-popup .entry[data-id="' + id + '"]');
 }
