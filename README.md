@@ -1,6 +1,6 @@
-# bpmn-js disable collapsed subprocess
+# bpmn-js-disable-collapsed-subprocess
 
-A bpmn-js extension which disables modeling collapsed subprocess via replace menu.
+A bpmn-js extension which disables modeling of collapsed sub-processes.
 
 ## Installation
 
