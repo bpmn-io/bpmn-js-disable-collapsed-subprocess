@@ -18,8 +18,7 @@ module.exports = function(karma) {
 
     frameworks: [
       'webpack',
-      'mocha',
-      'chai'
+      'mocha'
     ],
 
     files: [
