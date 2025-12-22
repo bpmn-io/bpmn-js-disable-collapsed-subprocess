@@ -17,7 +17,7 @@ try {
   }
 } catch (e) {
 
-  // Fall back to system Chrome if puppeteer Chrome is not available
+  // puppeteer Chrome is not available, will fall back to system Chrome
 }
 
 
