@@ -1,9 +1,13 @@
 
+import './globals';
+
 import {
   bootstrapModeler,
   getBpmnJS,
   inject
 } from 'bpmn-js/test/helper';
+
+import { expect } from 'chai';
 
 import coreModule from 'bpmn-js/lib/core';
 import modelingModule from 'bpmn-js/lib/features/modeling';

@@ -1,5 +1,7 @@
 /* eslint-env node */
 
+const fs = require('fs');
+
 // configures browsers to run test against
 // any of [ 'ChromeHeadless', 'Chrome', 'Firefox' ]
 const browsers =
@@ -8,7 +10,15 @@ const browsers =
     .split(/\s*,\s*/g);
 
 // use puppeteer provided Chrome for testing
-process.env.CHROME_BIN = require('puppeteer').executablePath();
+try {
+  const chromePath = require('puppeteer').executablePath();
+  if (fs.existsSync(chromePath)) {
+    process.env.CHROME_BIN = chromePath;
+  }
+} catch (e) {
+
+  // Fall back to system Chrome if puppeteer Chrome is not available
+}
 
 
 module.exports = function(karma) {
@@ -18,8 +28,7 @@ module.exports = function(karma) {
 
     frameworks: [
       'webpack',
-      'mocha',
-      'chai'
+      'mocha'
     ],
 
     files: [
@@ -43,6 +52,10 @@ module.exports = function(karma) {
       mode: 'development',
       module: {
         rules: [
+          {
+            test: /test\/globals\.js$/,
+            sideEffects: true
+          },
           {
             test: /\.bpmn$/,
             type: 'asset/source'
