@@ -1,6 +1,4 @@
 
-import './globals';
-
 import {
   bootstrapModeler,
   getBpmnJS,

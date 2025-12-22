@@ -53,10 +53,6 @@ module.exports = function(karma) {
       module: {
         rules: [
           {
-            test: /test\/globals\.js$/,
-            sideEffects: true
-          },
-          {
             test: /\.bpmn$/,
             type: 'asset/source'
           }
