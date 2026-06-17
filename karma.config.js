@@ -5,11 +5,7 @@ const browsers =
     .replace(/^\s+|\s+$/, '')
     .split(/\s*,\s*/g);
 
-// use puppeteer provided Chrome for testing
-
-
-module.exports = async function(karma) {
-  process.env.CHROME_BIN = await require('puppeteer').executablePath();
+module.exports = function(karma) {
   karma.set({
 
     basePath: '.',
